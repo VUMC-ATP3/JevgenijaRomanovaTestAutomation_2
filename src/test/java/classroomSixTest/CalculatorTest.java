@@ -1,3 +1,5 @@
+package classroomSixTest;
+
 import classroomSix.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
