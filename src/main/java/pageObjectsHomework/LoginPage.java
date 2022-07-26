@@ -22,15 +22,15 @@ public class LoginPage {
 
     }
 
-    private WebElement getLoginButton() {
+    public WebElement getLoginButton() {
         return driver.findElement(loginButton);
     }
 
-    private WebElement getPasswordField() {
+    public WebElement getPasswordField() {
         return driver.findElement(passwordInputField);
     }
 
-    private WebElement getUsernameField() {
+    public WebElement getUsernameField() {
         return driver.findElement(usernameInputField);
     }
 

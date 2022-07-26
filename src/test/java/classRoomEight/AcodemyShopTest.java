@@ -3,13 +3,17 @@ package classRoomEight;
 import AcodemyShop.MainPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +23,10 @@ public class AcodemyShopTest {
     WebDriverWait wait;
 
     @BeforeMethod
-    public void openBrowser() {
+    public void openBrowser() throws MalformedURLException {
         driver = new ChromeDriver();
+        ChromeOptions ChromeOptions = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL("http://192.168.8.115:4444"), ChromeOptions);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10)); //konreto elementu
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //uz katru elementu
